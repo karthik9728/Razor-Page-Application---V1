@@ -1,7 +1,17 @@
+using AbbyWeb.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+#region Database Configuration
+
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.
+UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+#endregion
 
 var app = builder.Build();
 
