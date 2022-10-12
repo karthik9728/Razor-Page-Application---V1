@@ -11,7 +11,7 @@
             <a asp-page="Create" class="btn btn-primary"><i class="bi bi-file-plus"></i> Add Category</a>
         </div>
     </div>
-    <br/> <br />
+    <br /> <br />
 
     <table class="table table-bordered table-striped" style="width:100%">
         <thead>
@@ -22,14 +22,21 @@
                 <th>
                     Display Order
                 </th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var obj in Model.Categories)
             {
                 <tr>
-                    <td>@obj.Name</td>
-                    <td>@obj.DisplayOrder</td>
+                    <td style="width:50%">@obj.Name</td>
+                    <td style="width:30%">@obj.DisplayOrder</td>
+                    <td>
+                       <div class="w-75 btn-group" role="group">
+                            <a class="btn btn-secondary mx-2" asp-page="Edit" asp-route-id="@obj.Id"><i class="bi bi-pencil-square"></i> Edit</a>
+                            <a class="btn btn-danger mx-2" asp-page="Delete" asp-route-id="@obj.Id"><i class="bi bi-trash"></i> Delete</a>
+                       </div>
+                    </td>
                 </tr>
             }
         </tbody>

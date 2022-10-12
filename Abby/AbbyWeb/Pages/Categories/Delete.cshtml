@@ -1,0 +1,26 @@
+﻿@page
+@model AbbyWeb.Pages.Categories.DeleteModel
+@{
+}
+
+<form method="post">
+    <input asp-for="@Model.Category.Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary pl-3">Edit Category</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Category.Name"></label>
+            <input asp-for="@Model.Category.Name" class="form-control" disabled/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.DisplayOrder"></label>
+            <input asp-for="@Model.Category.DisplayOrder" class="form-control" disabled />
+        </div>
+        <a asp-page="Index" class="btn btn-danger" style="width:150px">Back</a>
+        <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+    </div>
+</form>
+
