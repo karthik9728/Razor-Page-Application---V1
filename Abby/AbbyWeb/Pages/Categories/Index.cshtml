@@ -3,13 +3,7 @@
 @{
 }
 
-@if(TempData["success"] != null){
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script type="text/javascript">
-        toastr.success('@TempData["success"]');
-    </script>
-}
+<partial name="_Notification"></partial>
 
 <div class="container p-3">
     <div class="row pt-4">
